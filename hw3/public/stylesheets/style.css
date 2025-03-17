@@ -1,0 +1,17 @@
+/* Kaitlyn Atalig */
+/* This sets the gif as the background and adds a semi-transparent black box to make the words more visible */
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Coffee.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  font-family: "Lucida Console", monospace; /* Default font for the body text */
+}
+
+/* Changes the title font color and style */
+h1 {
+  color: white;
+  margin-left: 20px;
+  font-family: Verdana, sans-serif; /* Font for the title */
+}

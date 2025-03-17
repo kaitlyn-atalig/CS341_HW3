@@ -1,0 +1,156 @@
+<!-- Kaitlyn Atalig -->
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <script src="javascripts/order.js"></script> <!-- External JS file -->
+</head>
+<body>
+ 
+  <!-- Title -->
+  <h1>Cheesecake Order Form</h1>
+
+  <!-- Image -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" 
+       alt="Cheesecake slice with strawberry sauce" width="400" height="400">
+  <p>Quantity Topping</p>
+
+  <table>
+    <tr>
+      <!-- Drop down box -->
+      <td>
+        <select name="quantity" id="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </td>
+      <td>
+        <!-- Radio buttons -->
+        <form>
+          <input type="radio" id="Plain" name="Topping" value="Plain">
+          <label for="Plain">Plain</label><br>
+
+          <input type="radio" id="Cherry" name="Topping" value="Cherry">
+          <label for="Cherry">Cherry</label><br>
+
+          <input type="radio" id="Chocolate" name="Topping" value="Chocolate">
+          <label for="Chocolate">Chocolate</label><br>
+        </form>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Textbox -->
+  <form id="orderForm">
+    <p><label for="Notes">Notes:</label></p>
+    <textarea id="Notes" name="Notes" rows="4" cols="50" placeholder="Enter any special instructions here."></textarea>
+    <br>
+
+    <!-- Order Button -->
+    <button type="button" id="orderButton">Order</button>
+  </form>
+
+  <!-- Confirmation message -->
+  <div id="confirmationMessage" style="display: none;">
+    <h2>Thank you! Your order has been placed :)</h2>
+    <p id="orderDetails"></p>
+  </div>
+
+  <!-- Month container hover -->
+  <h3>Total Orders for <span id="month-container">
+        <span id="month-name">Jan</span>
+        <div id="month-dropdown">
+          <a href="#" onclick="changeMonth('Jan')">Jan</a>
+          <a href="#" onclick="changeMonth('Feb')">Feb</a>
+          <a href="#" onclick="changeMonth('Mar')">Mar</a>
+          <a href="#" onclick="changeMonth('Apr')">Apr</a>
+          <a href="#" onclick="changeMonth('May')">May</a>
+          <a href="#" onclick="changeMonth('Jun')">Jun</a>
+          <a href="#" onclick="changeMonth('Jul')">Jul</a>
+          <a href="#" onclick="changeMonth('Aug')">Aug</a>
+          <a href="#" onclick="changeMonth('Sep')">Sep</a>
+          <a href="#" onclick="changeMonth('Oct')">Oct</a>
+          <a href="#" onclick="changeMonth('Nov')">Nov</a>
+          <a href="#" onclick="changeMonth('Dec')">Dec</a>
+        </div>
+      </span></h3>
+  
+  <!-- Adding bullet points to the names -->
+  <ul>
+    <li>11 Cherry</li>
+    <li>17 Chocolate</li>
+    <li>31 Plain</li>
+  </ul>
+
+  <style>
+    /* Container for month dropdown */
+    #month-container {
+      display: inline-block;
+      position: relative;
+    }
+
+    /* Style for the month name */
+    #month-name {
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+      background-color: #f9f9f9;
+      color: black;
+    }
+
+    #month-name:hover {
+      background-color: #fa8072;
+    }
+
+    /* Style for the dropdown menu that appears when hovering over the month */
+    #month-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid gray;
+      padding: 5px;
+      z-index: 10; 
+      min-width: 80px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    /* Shows the dropdown when hovering over the month container */
+    #month-container:hover #month-dropdown {
+      display: block;
+    }
+
+    #month-dropdown a {
+      display: block;
+      padding: 5px;
+      text-decoration: none;
+      color: black;
+    }
+
+    #month-dropdown a:hover {
+      background-color: #ddd;
+    }
+
+    body {
+      font-family: "Lucida Console";
+    }
+
+    /* Table styling for the drop down */
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 10px;
+    }
+  </style>
+
+</body>
+</html>
